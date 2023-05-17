@@ -1,18 +1,13 @@
-﻿/// ==============================
+﻿
+/// ==============================
 /// First C# console application
 /// ==============================
-
 internal class Program
 {
     private static void Main(string[] args)
     {
-        Console.WriteLine("Insert first number: ");
-        string str = Console.ReadLine();
-        int x = int.Parse(str);
-
-        Console.WriteLine("Insert second number: ");
-        str = Console.ReadLine();
-        int y = int.Parse(str);
+        int x = GetNumber("Insert first number: ");
+        int y = GetNumber("Insert second number: ");
 
         // Subtraction
         Console.WriteLine($"Subtraction result: {x - y}");
@@ -32,6 +27,15 @@ internal class Program
         int min = GetMin(x, y);
         Console.WriteLine($"Minimum of two values is: {min}");
 
+    }
+
+
+    private static int GetNumber(string text)
+    {
+        Console.WriteLine(text);
+        string str = Console.ReadLine();
+
+        return int.Parse(str);
     }
 
 
