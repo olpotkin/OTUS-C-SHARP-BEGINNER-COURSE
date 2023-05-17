@@ -25,24 +25,41 @@ internal class Program
 
 
         // Max value: x or y
-        int max = 0;
-        if (x > y)
-        {
-            max = x;
-        }
-        else
-        {
-            max = y;
-        }
+        int max = GetMax(x, y);
         Console.WriteLine($"Maximum of two values is: {max}");
 
         // Min value: x or y
-        int min = 0;
-        if (x < y)
-            min = x;
-        else
-            min = y;
+        int min = GetMin(x, y);
         Console.WriteLine($"Minimum of two values is: {min}");
 
     }
+
+
+    static int GetMax (int a, int b)
+    {
+        int max = 0;
+        if (a > b)
+        {
+            max = a;
+        }
+        else
+        {
+            max = b;
+        }
+
+        return max;
+    }
+
+
+    static int GetMin(int a, int b)
+    {
+        int min = 0;
+        if (a < b)
+            min = a;
+        else
+            min = b;
+
+        return min;
+    }
+
 }
