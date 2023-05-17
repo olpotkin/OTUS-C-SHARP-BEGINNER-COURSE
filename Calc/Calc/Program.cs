@@ -9,26 +9,43 @@ internal class Program
         int x = GetNumber("Insert first number: ");
         int y = GetNumber("Insert second number: ");
 
-        // Subtraction
-        Console.WriteLine($"Subtraction result: {x - y}");
-        // Addition
-        Console.WriteLine($"Addition result: {x + y}");
-        // Multiplication
-        Console.WriteLine($"Multiplication result: {x * y}");
-        // Division
-        Console.WriteLine($"Division result: {x / y}");
+        Console.WriteLine("Please, choose the command: +, -, *, /, min, max");
+        string cmd = Console.ReadLine();
 
-
-        // Max value: x or y
-        int max = GetMax(x, y);
-        Console.WriteLine($"Maximum of two values is: {max}");
-
-        // Min value: x or y
-        int min = GetMin(x, y);
-        Console.WriteLine($"Minimum of two values is: {min}");
-
+        int result = GetResult(x, y, cmd);
+        Console.WriteLine(result);
     }
 
+    private static int GetResult(int x, int y, string cmd)
+    {
+        int result;
+        switch (cmd)
+        {
+            case "+":
+                result = x + y;
+                break;
+            case "-":
+                result = x - y;
+                break;
+            case "*":
+                result = x * y;
+                break;
+            case "/":
+                result = x / y;
+                break;
+            case "max":
+                result = GetMax(x, y);
+                break;
+            case "min":
+                result = GetMin(x, y);
+                break;
+            default:
+                result = 0;
+                break;
+        }
+
+        return result;
+    }
 
     private static int GetNumber(string text)
     {
@@ -38,8 +55,8 @@ internal class Program
         return int.Parse(str);
     }
 
-
-    static int GetMax (int a, int b)
+    // Max value: x or y
+    static int GetMax(int a, int b)
     {
         int max = 0;
         if (a > b)
@@ -54,7 +71,7 @@ internal class Program
         return max;
     }
 
-
+    // Min value: x or y
     static int GetMin(int a, int b)
     {
         int min = 0;
