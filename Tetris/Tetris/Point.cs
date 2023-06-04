@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Tetris
 {
-	class Point
+    class Point
     {
         public int x;
         public int y;
