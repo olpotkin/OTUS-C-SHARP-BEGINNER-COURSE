@@ -2,7 +2,7 @@
 namespace Tetris
 {
 	class Point
-	{
+    {
         public int x;
         public int y;
         public char c;
