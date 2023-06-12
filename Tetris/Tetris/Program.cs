@@ -1,29 +1,42 @@
-﻿internal class Program
+﻿namespace Tetris
 {
-    private static void Main(string[] args)
+    class Program
     {
-        // Only for Windows Platform:
-        //Console.SetWindowSize(40, 30);
-        //Console.SetBufferSize(40, 30);
+        static void Main(string[] args)
+        {
+            // Only for Windows Platform:
+            //Console.SetWindowSize(40, 30);
+            //Console.SetBufferSize(40, 30);
 
-        int x1 = 2;
-        int y1 = 3;
-        char c1 = '*';
-        Draw(x1, y1, c1);
+            Figure[] f = new Figure[2];
+            f[0] = new Square(2, 5, '*');
+            f[1] = new Stick(6, 6, '*');
 
-        int x2 = 4;
-        int y2 = 5;
-        char c2 = '#';
-        Draw(x2, y2, c2);
+            foreach (Figure fig in f)
+            {
+                fig.Draw();
+            }
 
-        Console.ReadLine();
+
+            Square s = new Square(2, 5, '*');
+            s.Draw();
+
+            Stick stick = new Stick(6, 6, '*');
+            stick.Draw();
+
+            Point p1 = new Point(2, 3, '*');
+            p1.Draw();
+
+            Point p2 = new Point()
+            {
+                x = 4,
+                y = 5,
+                c = '*'
+            };
+            p2.Draw();
+
+
+            Console.ReadLine();
+        }
     }
-
-
-    static void Draw(int x, int y, char c)
-    {
-        Console.SetCursorPosition(x, y);
-        Console.Write(c);
-    }
-
 }
