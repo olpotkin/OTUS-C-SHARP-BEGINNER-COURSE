@@ -2,7 +2,7 @@
 
 namespace Tetris
 {
-    public class Figure
+    public abstract class Figure
     {
         protected Point[] points = new Point[4];
 
@@ -33,6 +33,8 @@ namespace Tetris
             }
         }
 
+
+        public abstract void Rotate();
     }
 }
 

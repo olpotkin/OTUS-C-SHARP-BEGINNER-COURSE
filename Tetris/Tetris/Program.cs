@@ -8,7 +8,17 @@
             //Console.SetWindowSize(40, 30);
             //Console.SetBufferSize(40, 30);
 
-            Square s = new Square(2, 5, '*');
+            Figure s = new Stick(20, 5, '*');
+            s.Draw();
+
+            Thread.Sleep(1000);
+            s.Hide();
+            s.Rotate();
+            s.Draw();
+
+            Thread.Sleep(1000);
+            s.Hide();
+            s.Move(Direction.DOWN);
             s.Draw();
 
             Thread.Sleep(1000);
@@ -18,17 +28,7 @@
 
             Thread.Sleep(1000);
             s.Hide();
-            s.Move(Direction.DOWN);
-            s.Draw();
-
-            Thread.Sleep(1000);
-            s.Hide();
-            s.Move(Direction.DOWN);
-            s.Draw();
-
-            Thread.Sleep(1000);
-            s.Hide();
-            s.Move(Direction.RIGHT);
+            s.Rotate();
             s.Draw();
 
             //Stick stick = new Stick(6, 6, '*');
