@@ -40,7 +40,13 @@ namespace Tetris
         }
 
 
-        // Constructor
+        public Point(Point p)
+        {
+            x = p.x;
+            y = p.y;
+            c = p.c;
+        }
+
         public Point(int a, int b, char sym)
         {
             x = a;
