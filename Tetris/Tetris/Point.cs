@@ -13,6 +13,7 @@ namespace Tetris
         {
             Console.SetCursorPosition(x, y);
             Console.Write(c);
+            Console.SetCursorPosition(0, 0);
         }
 
 
