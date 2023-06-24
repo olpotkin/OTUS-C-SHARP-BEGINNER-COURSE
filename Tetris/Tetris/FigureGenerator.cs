@@ -4,9 +4,12 @@ namespace Tetris
 {
     internal class FigureGenerator
     {
-        private int _x;                // x-position
-        private int _y;                // y-position
-        private char _c;               // character
+        // x-position
+        private int _x;
+        // y-position
+        private int _y;
+        // character
+        private char _c;
 
         private Random _rand = new Random();
 
