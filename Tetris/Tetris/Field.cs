@@ -23,7 +23,6 @@ namespace Tetris
             }
         }
 
-
         public static int Height
         {
             get
@@ -40,6 +39,32 @@ namespace Tetris
             }
         }
 
+        private static bool[][] _heap;
+
+        static Field()
+        {
+            // number of rows in array = Height
+            _heap = new bool[Height][];
+
+            // init each row as an array
+            for (int i = 0; i < Height; ++i)
+            {
+                _heap[i] = new bool[Width];
+            }
+        }
+
+        public static bool CheckStrike(Point p)
+        {
+            return _heap[p.Y][p.X];
+        }
+
+        public static void AddFigure(Figure fig)
+        {
+            foreach (var p in fig.Points)
+            {
+                _heap[p.Y][p.X] = true;
+            }
+        }
 
     }
 }
